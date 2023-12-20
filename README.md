@@ -86,25 +86,41 @@ aws configure
 
 We go to the AWS console, search for Amazon Elastic Container Registry and create a repository, we give it a name and leave all the other settings by default. 
 
+![](screenshots/create_repository.png)
+
 Then we select the our repository and click view push commands, we have to open the terminal and have as working directory the folder 'serverless' which contains the Dockerfile and execute each command in order.
+
+![](screenshots/view_push_commands.png)
 
 ### Creating the lambda function
 
 We go to the AWS console, search for Lambda and click on create function
 
+![](screenshots/create_function.png)
+
 Select the container image we uploaded recently to ECR, put a name for the function and leave the other settings by default, then we click on create function
 
+![](screenshots/creating_function.png)
+
 We have to change some configuration regarding memory size and timeout for that we go to the configuration tab and change memory to 1024 and timeout to a minimum of 30 seconds
+
+![](screenshots/settings.png)
 
 ### Exposing the API
 
 We go to the AWS console, search for API Gateway and click on Create API, select REST API (not private) give it a suitable name and finally click on create.
 
+![](screenshots/create_api)
+
 We click on create resource and type in 'predict' for our Resource name and click on create
+
+![](screenshots/create_resource.png)
 
 We click then on create method and select meethod type POST, integration type Lambda, select the region and the lambda function we just created, then click on create.
 
 Finally, we click on Deploy API, Stage \*New Stage\* give it a stage name and click on deploy, we finally get an Invoke URL that we can use with our test.py file, we have to add /predict.
+
+![](screenshots/deployed.png)
 
 ### Testing the API
 
@@ -113,6 +129,8 @@ To test the service execute the test_lambda.py file
 ```
 python3 test-lambda.py
 ```
+
+![](screenshots/final.png)
 
 
 # References 
