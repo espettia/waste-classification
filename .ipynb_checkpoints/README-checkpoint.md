@@ -15,6 +15,9 @@ We use the RealWaste dataset, which is an image dataset assembled from waste mat
   - Vegetation: 436
   
 Original work: [RealWaste: A Novel Real-Life Data Set for Landfill Waste Classification Using Deep Learning](https://www.mdpi.com/2078-2489/14/12/633).
+# Data exploration
+
+We can see there is some class imbalance as plastic is present three times more than textile trash. Also all images are centered, are the same size, but some have different lightning. Some images are shown in the project.ipynb file where a discussion is present when deciding which data augmentations were more useful.
 
 # Model description
 
